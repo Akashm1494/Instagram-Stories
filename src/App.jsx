@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import StoriesList from './components/StoriesList';
 import StoryViewer from './components/StoryViewer';
+import PostsFeed from './components/PostsFeed';
 import storiesData from './data/stories.json';
+import postsData from './data/posts.json';
 import './App.css';
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
     <div className="app">
       <StoriesList stories={storiesData} onStoryClick={handleStoryClick} />
 
+      <PostsFeed posts={postsData} />
+
       {isViewerOpen && (
         <StoryViewer
           stories={storiesData}
@@ -33,3 +37,4 @@ function App() {
 }
 
 export default App;
+
